@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>DinoBook</title>
+</head>
+<body>
+    <nav class="flex items-center justify-between flex-wrap bg-gray-300 p-6">
+  <div class="flex items-center flex-shrink-0 text-black mr-6">
+      <img class="h-20 px-4 object-contain" src="/static/dino.png" alt="Hello" srcset=""/>
+    <span class="font-bold text-4xl tracking-tight font-sans">DinoBook</span>
+  </div>
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow">
+      <a href="/dinosaurs" class="block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
+        Dinosaurs
+      </a>
+      <a href="/add/dinosaurs" class="block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
+        Add Dinosaur
+      </a>
+    </div>
+    {{#if auth}}
+    <div>
+      <a href="/logout" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0">Logout</a>
+    </div>
+    {{ else }}
+    <div>
+      <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0 mr-4">Register</a>
+    </div>
+      <div>
+      <a href="/login" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0 ">Login</a>
+    </div>
+    {{/if}}
+  </div>
+</nav>
+
